@@ -1,0 +1,51 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Environment / secrets — NEVER commit this
+.env
+*.env
+
+# Streamlit
+.streamlit/
+
+# Output files (generated notes)
+output/
+*.png
+*.pdf
+
+# Assets — auto-downloaded at runtime, no need to commit
+assets/
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.user
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temp files
+*.tmp
+*.bak
+*.swp
