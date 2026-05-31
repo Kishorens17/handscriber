@@ -307,22 +307,6 @@ with st.sidebar:
 
     api_key   = os.getenv("GEMINI_API_KEY", "")
     key_valid = bool(api_key and api_key != "your_gemini_api_key_here")
-    if key_valid:
-        masked = api_key[:8] + "•" * max(0, len(api_key) - 12) + api_key[-4:]
-        st.markdown(
-            f'<div class="api-ok">✅ &nbsp;API key loaded &nbsp;<code>{masked}</code></div>',
-            unsafe_allow_html=True,
-        )
-    else:
-        st.markdown(
-            '<div class="api-fail">🔑 <strong>API Key missing</strong><br>'
-            'Add <code>GEMINI_API_KEY=…</code> to your <code>.env</code> file.<br>'
-            '<a href="https://aistudio.google.com/app/apikey" target="_blank" '
-            'style="color:#7c6dfa;">→ Get a free key</a></div>',
-            unsafe_allow_html=True,
-        )
-
-    st.markdown("---")
 
     # ── AI Engine ─────────────────────────────────────────────────────────────
     st.markdown("### 🤖 AI Engine")
