@@ -310,15 +310,10 @@ with st.sidebar:
     if key_valid:
         masked = api_key[:8] + "•" * max(0, len(api_key) - 12) + api_key[-4:]
         st.markdown(
-            f'<div class="api-ok">✅ &nbsp;API key loaded &nbsp;<code>{masked}</code></div>',
             unsafe_allow_html=True,
         )
     else:
         st.markdown(
-            '<div class="api-fail">🔑 <strong>API Key missing</strong><br>'
-            'Add <code>GEMINI_API_KEY=…</code> to your <code>.env</code> file.<br>'
-            '<a href="https://aistudio.google.com/app/apikey" target="_blank" '
-            'style="color:#7c6dfa;">→ Get a free key</a></div>',
             unsafe_allow_html=True,
         )
 
@@ -439,7 +434,7 @@ with st.sidebar:
 # MAIN CONTENT
 # ─────────────────────────────────────────────────────────────────────────────
 
-st.markdown('<div class="hero-wrap"><div class="hero-title">✍️ HandScriber</div></div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-wrap"><div class="hero-title">✍️ HandScriber </div></div>', unsafe_allow_html=True)
 st.markdown(
     '<div style="text-align:center;" class="hero-sub">'
     'Multimodal AI Notes Agent &nbsp;·&nbsp; Feed it anything. Get handwritten notes.'
