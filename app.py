@@ -40,64 +40,37 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap');
 
-:root {
+.stApp {
     /* Base Variables linked to Streamlit's Native Theme */
-    --bg:       var(--background-color, #0d1117);
-    --bg2:      var(--secondary-background-color, #161b22);
-    --text:     var(--text-color, #e8eaf0);
+    --bg:             var(--background-color);
+    --bg2:            var(--secondary-background-color);
+    --text:           var(--text-color);
     
-    /* Default Dark Theme Design Tokens */
-    --card:     #1a1f2e;
-    --card2:    #1e2436;
-    --border:   #2d3248;
-    --border2:  #3d4268;
-    --accent:   #7c6dfa;
-    --accent2:  #fa6d8a;
-    --accent3:  #6dfacc;
-    --muted:    #7a7e9a;
-    --success:  #43d9ad;
-    --warn:     #f0a050;
+    /* Semantic mapping using native variables */
+    --card:           var(--secondary-background-color);
+    --card2:          var(--background-color);
+    --border:         rgba(128, 128, 128, 0.2);
+    --border2:        rgba(128, 128, 128, 0.4);
     
-    --reasoning-bg:     #080d14;
-    --reasoning-border: #2a3048;
-    --reasoning-text:   #8badd4;
+    --accent:         #7c6dfa;
+    --accent2:        #fa6d8a;
+    --accent3:        #0ea5e9;
+    --muted:          rgba(128, 128, 128, 0.8);
+    --success:        #10b981;
+    --warn:           #f59e0b;
     
-    --budget-bg:        #0e1420;
+    --reasoning-bg:   rgba(128, 128, 128, 0.08);
+    --reasoning-border: rgba(128, 128, 128, 0.2);
+    --reasoning-text: var(--text-color);
     
-    --chip-bg:          #1e2436;
-    --chip-text:        #9bb8d4;
-    --placeholder:      #3d4268;
-}
-
-/* Light Theme Design Tokens Override */
-@media (prefers-color-scheme: light) {
-    :root {
-        --card:     #ffffff;
-        --card2:    #f0f2f6;
-        --border:   #e2e8f0;
-        --border2:  #cbd5e1;
-        --accent:   #5c4df0;
-        --accent2:  #e03d60;
-        --accent3:  #0ea5e9;
-        --muted:    #64748b;
-        --success:  #10b981;
-        --warn:     #d97706;
-        
-        --reasoning-bg:     #f8fafc;
-        --reasoning-border: #e2e8f0;
-        --reasoning-text:   #334155;
-        
-        --budget-bg:        #f1f5f9;
-        
-        --chip-bg:          #e2e8f0;
-        --chip-text:        #475569;
-        --placeholder:      #94a3b8;
-    }
+    --budget-bg:      rgba(128, 128, 128, 0.06);
+    
+    --chip-bg:        rgba(128, 128, 128, 0.12);
+    --chip-text:      var(--text-color);
+    --placeholder:    rgba(128, 128, 128, 0.55);
 }
 
 html, body, [data-testid="stAppViewContainer"] {
-    background-color: var(--bg) !important;
-    color: var(--text) !important;
     font-family: 'Inter', sans-serif;
 }
 
