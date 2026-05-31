@@ -1,5 +1,5 @@
 """
-app.py — HandScribe v2.0
+app.py — HandScriber v2.0
 Multimodal AI Notes Agent · Unified Input · Budget-Aware · Density Control
 """
 
@@ -27,7 +27,7 @@ from note_renderer import (
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title="HandScribe v2.0 — AI Handwritten Notes",
+    page_title="HandScriber v2.0 — AI Handwritten Notes",
     page_icon="✍️",
     layout="wide",
     initial_sidebar_state="expanded",
@@ -308,6 +308,7 @@ with st.sidebar:
     api_key   = os.getenv("GEMINI_API_KEY", "")
     key_valid = bool(api_key and api_key != "your_gemini_api_key_here")
 
+
     # ── AI Engine ─────────────────────────────────────────────────────────────
     st.markdown("### 🤖 AI Engine")
     model_label = st.selectbox(
@@ -414,7 +415,7 @@ with st.sidebar:
 
     st.markdown(
         '<div style="color:#4a4e6a;font-size:0.72rem;text-align:center;margin-top:0.5rem;">'
-        'HandScribe v2.0 · Gemini AI + Pillow</div>',
+        'HandScriber v2.0 · Gemini AI + Pillow</div>',
         unsafe_allow_html=True,
     )
 
@@ -423,7 +424,7 @@ with st.sidebar:
 # MAIN CONTENT
 # ─────────────────────────────────────────────────────────────────────────────
 
-st.markdown('<div class="hero-wrap"><div class="hero-title">✍️ HandScribe</div></div>', unsafe_allow_html=True)
+st.markdown('<div class="hero-wrap"><div class="hero-title">✍️ HandScriber </div></div>', unsafe_allow_html=True)
 st.markdown(
     '<div style="text-align:center;" class="hero-sub">'
     'Multimodal AI Notes Agent &nbsp;·&nbsp; Feed it anything. Get handwritten notes.'
@@ -693,7 +694,7 @@ if st.session_state.rendered_paths:
         st.download_button(
             label="⬇️  Download All Pages as PDF",
             data=_pdf_bytes,
-            file_name="handscribe_notes.pdf",
+            file_name="handscriber_notes.pdf",
             mime="application/pdf",
             key="dl_pdf",
             width='stretch',
@@ -707,7 +708,7 @@ if st.session_state.rendered_paths:
 # ── Footer ────────────────────────────────────────────────────────────────────
 st.markdown(
     '<div class="footer">'
-    '✍️ HandScribe v2.0 &nbsp;·&nbsp; Gemini AI &nbsp;·&nbsp; '
+    '✍️ HandScriber v2.0 &nbsp;·&nbsp; Gemini AI &nbsp;·&nbsp; '
     'Pillow &nbsp;·&nbsp; Streamlit &nbsp;·&nbsp; '
     '<a href="https://aistudio.google.com/app/apikey" target="_blank" '
     'style="color:#7c6dfa;">Get API Key</a>'
