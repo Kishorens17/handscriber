@@ -41,8 +41,12 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --bg:       #0d1117;
-    --bg2:      #161b22;
+    /* Base Variables linked to Streamlit's Native Theme */
+    --bg:       var(--background-color, #0d1117);
+    --bg2:      var(--secondary-background-color, #161b22);
+    --text:     var(--text-color, #e8eaf0);
+    
+    /* Default Dark Theme Design Tokens */
     --card:     #1a1f2e;
     --card2:    #1e2436;
     --border:   #2d3248;
@@ -50,10 +54,45 @@ st.markdown("""
     --accent:   #7c6dfa;
     --accent2:  #fa6d8a;
     --accent3:  #6dfacc;
-    --text:     #e8eaf0;
     --muted:    #7a7e9a;
     --success:  #43d9ad;
     --warn:     #f0a050;
+    
+    --reasoning-bg:     #080d14;
+    --reasoning-border: #2a3048;
+    --reasoning-text:   #8badd4;
+    
+    --budget-bg:        #0e1420;
+    
+    --chip-bg:          #1e2436;
+    --chip-text:        #9bb8d4;
+    --placeholder:      #3d4268;
+}
+
+/* Light Theme Design Tokens Override */
+@media (prefers-color-scheme: light) {
+    :root {
+        --card:     #ffffff;
+        --card2:    #f0f2f6;
+        --border:   #e2e8f0;
+        --border2:  #cbd5e1;
+        --accent:   #5c4df0;
+        --accent2:  #e03d60;
+        --accent3:  #0ea5e9;
+        --muted:    #64748b;
+        --success:  #10b981;
+        --warn:     #d97706;
+        
+        --reasoning-bg:     #f8fafc;
+        --reasoning-border: #e2e8f0;
+        --reasoning-text:   #334155;
+        
+        --budget-bg:        #f1f5f9;
+        
+        --chip-bg:          #e2e8f0;
+        --chip-text:        #475569;
+        --placeholder:      #94a3b8;
+    }
 }
 
 html, body, [data-testid="stAppViewContainer"] {
@@ -159,12 +198,12 @@ div[data-testid="stDownloadButton"] > button:hover {
 
 /* Kill placeholder watermark */
 [data-testid="stTextArea"] textarea::placeholder {
-    color: #3d4268 !important;
-    opacity: 0.6 !important;
+    color: var(--placeholder) !important;
+    opacity: 0.65 !important;
 }
 
 [data-testid="stSelectbox"] > div > div {
-    background: #0d1117 !important;
+    background: var(--bg2) !important;
     border: 1px solid var(--border) !important;
     border-radius: 10px !important;
     color: var(--text) !important;
@@ -187,13 +226,13 @@ div[data-testid="stDownloadButton"] > button:hover {
 }
 
 .reasoning-box {
-    background: #080d14;
-    border: 1px solid #2a3048;
+    background: var(--reasoning-bg);
+    border: 1px solid var(--reasoning-border);
     border-radius: 10px;
     padding: 1rem 1.2rem;
     font-family: 'Courier New', monospace;
     font-size: 0.8rem;
-    color: #8badd4;
+    color: var(--reasoning-text);
     white-space: pre-wrap;
     max-height: 280px;
     overflow-y: auto;
@@ -228,7 +267,7 @@ div[data-testid="stDownloadButton"] > button:hover {
 }
 
 .budget-box {
-    background: #0e1420;
+    background: var(--budget-bg);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 8px 12px;
@@ -247,12 +286,12 @@ div[data-testid="stDownloadButton"] > button:hover {
 
 /* File chips */
 .file-chip {
-    background: var(--card2);
+    background: var(--chip-bg);
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 6px 10px;
     font-size: 0.8rem;
-    color: #9bb8d4;
+    color: var(--chip-text);
     display: inline-block;
     margin: 2px 4px 2px 0;
 }
